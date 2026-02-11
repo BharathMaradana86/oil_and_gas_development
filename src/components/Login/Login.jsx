@@ -12,6 +12,8 @@ import {
 import { useAuth } from '../../context/AuthContext';
 import styles from './Login.module.css';
 
+const LOGO_SRC = '/hypervise-blue.png';
+
 export function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -32,62 +34,118 @@ export function Login() {
   };
 
   return (
-    <Container maxWidth="sm" className={styles.container}>
-      <Card className={styles.card}>
-        <CardContent>
-          <Box className={styles.header}>
-            <Typography variant="h4" component="h1" className={styles.title}>
-              Oil & Gas AI Operations Platform
-            </Typography>
-            <Typography variant="body2" color="text.secondary" className={styles.subtitle}>
-              Eternal Robotics
-            </Typography>
-          </Box>
+    <div className={styles.container}>
+      <Container maxWidth="sm" className={styles.containerInner}>
+        <Card className={styles.card} elevation={0}>
+          <CardContent className={styles.cardContent}>
+            <Box className={styles.header}>
+              <Box className={styles.logoContainer}>
+                <img
+                  src={LOGO_SRC}
+                  alt="Hypervise"
+                  className={styles.logo}
+                />
+              </Box>
+              <Typography variant="h5" component="h1" className={styles.title}>
+                Sign In
+              </Typography>
+              <Typography variant="body2" className={styles.subtitle}>
+                Oil & Gas AI Operations Platform
+              </Typography>
+              <Typography variant="body2" className={styles.brand}>
+                Eternal Robotics
+              </Typography>
+            </Box>
 
-          <Box component="form" onSubmit={handleSubmit} className={styles.form}>
-            {error && (
-              <Alert severity="error" sx={{ mb: 2 }}>
-                {error}
-              </Alert>
-            )}
+            <Box component="form" onSubmit={handleSubmit} className={styles.form}>
+              {error && (
+                <Alert 
+                  severity="error" 
+                  sx={{ 
+                    mb: 2, 
+                    borderRadius: '8px',
+                  }}
+                >
+                  {error}
+                </Alert>
+              )}
 
-            <TextField
-              fullWidth
-              label="Username"
-              variant="outlined"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              margin="normal"
-              autoComplete="username"
-              autoFocus
-              required
-            />
+              <TextField
+                fullWidth
+                label="Username"
+                variant="outlined"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                autoComplete="username"
+                autoFocus
+                required
+                sx={{
+                  mb: 2,
+                  '& .MuiOutlinedInput-root': {
+                    borderRadius: '8px',
+                    '&:hover .MuiOutlinedInput-notchedOutline': {
+                      borderColor: 'var(--accent)',
+                    },
+                    '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                      borderColor: 'var(--accent)',
+                      borderWidth: '2px',
+                    },
+                  },
+                }}
+              />
 
-            <TextField
-              fullWidth
-              label="Password"
-              type="password"
-              variant="outlined"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              margin="normal"
-              autoComplete="current-password"
-              required
-            />
+              <TextField
+                fullWidth
+                label="Password"
+                type="password"
+                variant="outlined"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                autoComplete="current-password"
+                required
+                sx={{
+                  mb: 2,
+                  '& .MuiOutlinedInput-root': {
+                    borderRadius: '8px',
+                    '&:hover .MuiOutlinedInput-notchedOutline': {
+                      borderColor: 'var(--accent)',
+                    },
+                    '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                      borderColor: 'var(--accent)',
+                      borderWidth: '2px',
+                    },
+                  },
+                }}
+              />
 
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              size="large"
-              className={styles.submitButton}
-              sx={{ mt: 3, mb: 2 }}
-            >
-              Sign In
-            </Button>
-          </Box>
-        </CardContent>
-      </Card>
-    </Container>
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                size="large"
+                sx={{
+                  mt: 1,
+                  py: 1.5,
+                  backgroundColor: 'var(--accent)',
+                  textTransform: 'none',
+                  fontWeight: 600,
+                  fontSize: '1rem',
+                  borderRadius: '8px',
+                  boxShadow: '0 2px 8px rgba(57, 93, 171, 0.2)',
+                  transition: 'all 0.2s ease',
+                  '&:hover': {
+                    backgroundColor: 'var(--accent-hover)',
+                    boxShadow: '0 4px 12px rgba(57, 93, 171, 0.3)',
+                    transform: 'translateY(-1px)',
+                  },
+                }}
+              >
+                Sign In
+              </Button>
+            </Box>
+          </CardContent>
+        </Card>
+      </Container>
+    </div>
   );
 }
