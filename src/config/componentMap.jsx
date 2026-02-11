@@ -1,6 +1,7 @@
 /**
  * Static component map – no dynamic import, so content always renders without "Loading" or "Failed".
  * Maps (useCaseId, subRoute) to the correct component.
+ triggering pipeline
  */
 
 import PPEDetectionDashboard from '../dashboards/PPEDetection/PPEDetectionDashboard.jsx';
