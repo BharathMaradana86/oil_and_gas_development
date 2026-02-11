@@ -8,6 +8,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import LogoutIcon from '@mui/icons-material/Logout';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 import { usePlatform } from '../context/PlatformContext';
+import { useAuth } from '../context/AuthContext';
 import styles from './Header.module.css';
 
 const LOGO_SRC = '/hypervise-blue.png';
@@ -27,11 +28,17 @@ export function Header() {
     demoMode,
     setDemoMode,
   } = usePlatform();
+  const { username, logout } = useAuth();
 
   const [clientAnchor, setClientAnchor] = useState(null);
   const [siteAnchor, setSiteAnchor] = useState(null);
   const [timeAnchor, setTimeAnchor] = useState(null);
   const [profileAnchor, setProfileAnchor] = useState(null);
+
+  const handleLogout = () => {
+    logout();
+    setProfileAnchor(null);
+  };
 
   return (
     <header className={styles.header}>
@@ -146,8 +153,8 @@ export function Header() {
           aria-expanded={profileAnchor ? 'true' : undefined}
         >
           <div className={styles.profileBtn}>
-            <span className={styles.avatar}>U</span>
-            <span className={styles.profileText}>User</span>
+            <span className={styles.avatar}>{username ? username.charAt(0).toUpperCase() : 'U'}</span>
+            <span className={styles.profileText}>{username || 'User'}</span>
             <ExpandMoreIcon sx={{ fontSize: 20, color: '#A0A8B0' }} />
           </div>
         </IconButton>
@@ -179,7 +186,7 @@ export function Header() {
           </MenuItem>
           <MenuItem
             sx={{ color: '#FF5630', fontSize: 14, fontWeight: 500 }}
-            onClick={() => setProfileAnchor(null)}
+            onClick={handleLogout}
           >
             <ListItemIcon>
               <LogoutIcon fontSize="small" sx={{ color: '#FF5630' }} />

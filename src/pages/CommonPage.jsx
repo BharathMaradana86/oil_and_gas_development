@@ -20,8 +20,14 @@ const ICON_MAP = {
   Speed: SpeedIcon,
 };
 
-export default function CommonPage() {
+export default function CommonPage({ onSelectUseCase }) {
   const { client, site, demoMode } = usePlatform();
+
+  const handleModuleClick = (useCaseId) => {
+    if (onSelectUseCase) {
+      onSelectUseCase(useCaseId);
+    }
+  };
 
   return (
     <div className={styles.root}>
@@ -42,12 +48,20 @@ export default function CommonPage() {
             <Grid item xs={12} sm={6} md={4} key={uc.id}>
               <Paper
                 elevation={0}
+                onClick={() => handleModuleClick(uc.id)}
                 sx={{
                   p: 2,
                   border: '1px solid #e5e7eb',
                   borderRadius: 2,
                   backgroundColor: '#ffffff',
-                  '&:hover': { borderColor: '#395DAB', backgroundColor: 'rgba(57, 93, 171, 0.04)' },
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                  '&:hover': {
+                    borderColor: '#395DAB',
+                    backgroundColor: 'rgba(57, 93, 171, 0.04)',
+                    transform: 'translateY(-2px)',
+                    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+                  },
                 }}
               >
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 1 }}>

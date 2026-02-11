@@ -13,7 +13,7 @@ const pageVariants = {
 
 const pageTransition = { type: 'tween', duration: 0.2 };
 
-export function DashboardOrchestrator({ useCaseId, subRoute }) {
+export function DashboardOrchestrator({ useCaseId, subRoute, onSelectUseCase }) {
   const platform = usePlatform();
   const Component = useCaseId ? getComponent(useCaseId, subRoute) : null;
 
@@ -27,7 +27,7 @@ export function DashboardOrchestrator({ useCaseId, subRoute }) {
         exit="exit"
         transition={pageTransition}
       >
-        <CommonPage />
+        <CommonPage onSelectUseCase={onSelectUseCase} />
       </motion.div>
     );
   }
