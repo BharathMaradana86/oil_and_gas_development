@@ -1,0 +1,233 @@
+.kpiRow {
+  display: flex;
+  gap: 24px;
+}
+
+.kpi {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.kpiValue {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.kpiLabel {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.kpiTrend {
+  font-size: 10px;
+  color: var(--success);
+  margin-top: 2px;
+}
+
+.vizArea {
+  padding: 16px;
+  height: 100%;
+  min-height: 320px;
+}
+
+.cameraGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.cameraTile {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.cameraTileActive {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(56, 139, 253, 0.3);
+}
+
+.cameraPlaceholder {
+  aspect-ratio: 16/10;
+  background: linear-gradient(135deg, #1a2332 0%, #0d1117 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.camLabel {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.camLive {
+  font-size: 10px;
+  color: var(--live);
+  margin-top: 4px;
+}
+
+.boundingOverlay {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  right: 8px;
+  padding: 4px 8px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 4px;
+  font-size: 10px;
+  color: var(--success);
+}
+
+.overlayLabel {
+  opacity: 0.9;
+}
+
+.cameraFooter {
+  padding: 8px 12px;
+  font-size: 12px;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.violationsToday {
+  font-size: 11px;
+  color: var(--danger);
+}
+
+.complianceBar {
+  flex: 1;
+  min-width: 16px;
+  background: var(--success);
+  border-radius: 4px 4px 0 0;
+  opacity: 0.9;
+}
+
+.metricsContent,
+.alertsContent {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.panelTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.trendChart {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  height: 120px;
+}
+
+.trendBar {
+  flex: 1;
+  min-width: 20px;
+  background: var(--accent);
+  border-radius: 4px 4px 0 0;
+  opacity: 0.9;
+}
+
+.trendLabels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.alertList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.alertItem {
+  display: flex;
+  gap: 12px;
+  padding: 10px;
+  background: var(--bg-elevated);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+
+.alertSnapshot {
+  width: 64px;
+  height: 48px;
+  background: var(--content-bg);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.snapshotPlaceholder {
+  font-size: 20px;
+  opacity: 0.7;
+}
+
+.alertMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.alertType {
+  font-weight: 600;
+  color: var(--danger);
+  font-size: 13px;
+}
+
+.alertTime {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.alertConfidence {
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.alertCamera {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.filterSelect {
+  padding: 8px 12px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.demoBadge {
+  font-size: 12px;
+  color: var(--demo);
+  padding: 4px 8px;
+  background: rgba(210, 153, 34, 0.15);
+  border-radius: 4px;
+}

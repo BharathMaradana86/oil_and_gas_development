@@ -1,0 +1,281 @@
+.kpiRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.kpi {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.kpiValue {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.kpiSuccess {
+  color: var(--success);
+}
+
+.kpiDanger {
+  color: var(--danger);
+}
+
+.kpiLabel {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.vizArea {
+  padding: 16px;
+  min-height: 320px;
+}
+
+.sectionTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.zoneGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.zoneCard {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+.zoneCard:hover {
+  border-color: var(--accent);
+}
+
+.zoneCardActive {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(57, 93, 171, 0.25);
+}
+
+.zoneHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.zoneName {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  flex: 1;
+  min-width: 0;
+}
+
+.zoneStatus {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--success);
+  text-transform: uppercase;
+  padding: 2px 6px;
+  background: rgba(54, 179, 126, 0.15);
+  border-radius: 4px;
+}
+
+.zoneMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.zoneCameras {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.eventsTodayOk {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.eventsTodayAlert {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--danger);
+}
+
+.metricsContent {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.panelTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.trendBars {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 100px;
+}
+
+.trendBar {
+  flex: 1;
+  min-width: 24px;
+  background: var(--accent);
+  border-radius: 4px 4px 0 0;
+  opacity: 0.9;
+}
+
+.trendLabels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.zoneBars {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.zoneBarRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.zoneBarLabel {
+  font-size: 12px;
+  color: var(--text-primary);
+  min-width: 100px;
+}
+
+.zoneBarTrack {
+  flex: 1;
+  height: 8px;
+  background: var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.zoneBarFill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 4px;
+  transition: width 0.2s ease;
+}
+
+.zoneBarCount {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary);
+  min-width: 24px;
+  text-align: right;
+}
+
+.alertsContent {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.alertList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.alertItem {
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.alertRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.sevHigh {
+  color: var(--danger);
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.sevMedium {
+  color: var(--warning);
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.sevLow {
+  color: var(--text-primary);
+  font-size: 13px;
+}
+
+.resolvedBadge {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--success);
+  padding: 2px 6px;
+  background: rgba(54, 179, 126, 0.15);
+  border-radius: 4px;
+}
+
+.alertTime {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.alertZone {
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.filterSelect {
+  padding: 8px 12px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.demoBadge {
+  font-size: 12px;
+  color: var(--demo);
+  padding: 4px 8px;
+  background: rgba(210, 153, 34, 0.15);
+  border-radius: 4px;
+}

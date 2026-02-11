@@ -1,0 +1,59 @@
+/* Oil & Gas AI Operations Platform – MSIL/Hypervise-aligned theme */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* MSIL palette */
+  --nav-bg: #FFFFFF;
+  --sidebar-bg: #FFFFFF;
+  --content-bg: #F4F5F6;
+  --card-bg: #ffffff;
+  --hover-bg: #F4F5F6;
+  --border: #e5e7eb;
+  --border-dark: #D3D6DA;
+  --text-primary: #101623;
+  --text-secondary: #3B4453;
+  --text-muted: #707784;
+  --text-muted-2: #A0A8B0;
+  --accent: #395DAB;
+  --accent-hover: #2d4690;
+  --danger: #FF5630;
+  --success: #36b37e;
+  --warning: #d29922;
+  --live: #36b37e;
+  --demo: #d29922;
+  --bg-elevated: #F4F5F6;
+  /* Heatmap (fire/smoke) */
+  --heat-low: #36b37e;
+  --heat-mid: #d29922;
+  --heat-high: #e67e22;
+  --heat-critical: #FF5630;
+  --header-height: 70px;
+  --sidebar-width: 240px;
+  --radius: 8px;
+  --radius-sm: 5px;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+  background: var(--content-bg);
+  color: var(--text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Scrollbar – MSIL style */
+*::-webkit-scrollbar { width: 6px; height: 6px; }
+*::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 10px; }
+*::-webkit-scrollbar-thumb { background: #888; border-radius: 10px; }
+*::-webkit-scrollbar-thumb:hover { background: #555; }

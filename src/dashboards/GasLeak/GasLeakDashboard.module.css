@@ -1,0 +1,208 @@
+.kpiRow {
+  display: flex;
+  gap: 24px;
+}
+
+.kpi {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.kpiValue {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.kpiLabel {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.vizArea {
+  padding: 16px;
+  min-height: 320px;
+  position: relative;
+}
+
+.plantMap {
+  width: 100%;
+  height: 280px;
+  background: linear-gradient(180deg, #0d1b2a 0%, #1b263b 50%, #0d1117 100%);
+  border-radius: var(--radius-sm);
+  position: relative;
+}
+
+.zoneDot {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.2s;
+}
+
+.zoneDot:hover,
+.zoneDotActive {
+  box-shadow: 0 0 20px rgba(248, 81, 73, 0.5);
+}
+
+.zoneLabel {
+  font-size: 10px;
+  color: var(--text-primary);
+  background: rgba(0, 0, 0, 0.7);
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.zoneDot:hover .zoneLabel,
+.zoneDotActive .zoneLabel {
+  opacity: 1;
+}
+
+.heatmapLegend {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.legendGradient {
+  width: 80px;
+  height: 8px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--success), var(--warning), var(--danger));
+}
+
+.metricsContent,
+.alertsContent {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.panelTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.ppmChart {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  height: 120px;
+}
+
+.ppmBarWrap {
+  flex: 1;
+  min-width: 20px;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.ppmBar {
+  width: 100%;
+  min-height: 4px;
+  background: var(--accent);
+  border-radius: 4px 4px 0 0;
+}
+
+.trendLabels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.alertList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.alertItem {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  background: var(--bg-elevated);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--border);
+}
+
+.severityDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+.sev_high {
+  background: var(--danger);
+}
+
+.sev_medium {
+  background: var(--warning);
+}
+
+.sev_low {
+  background: var(--success);
+}
+
+.alertMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.alertMessage {
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+.alertTime {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.alertPpm {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.filterSelect {
+  padding: 8px 12px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.demoBadge {
+  font-size: 12px;
+  color: var(--demo);
+  padding: 4px 8px;
+  background: rgba(210, 153, 34, 0.15);
+  border-radius: 4px;
+}

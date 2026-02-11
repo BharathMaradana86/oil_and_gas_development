@@ -1,0 +1,16 @@
+.app {
+  display: flex;
+  min-height: 100vh;
+  background: var(--content-bg);
+}
+
+.main {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  margin-top: var(--header-height);
+  min-height: calc(100vh - var(--header-height));
+  overflow: auto;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-top: 24px;
+}
